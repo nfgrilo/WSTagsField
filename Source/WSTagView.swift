@@ -243,7 +243,7 @@ extension WSTagView: UIKeyInput {
         onDidInputText?(self, text)
     }
 
-    public func deleteBackward() {
+    open func deleteBackward() {
         onDidRequestDelete?(self, nil)
     }
 
