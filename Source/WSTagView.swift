@@ -102,7 +102,7 @@ open class WSTagView: UIView, UITextInputTraits {
 
     // MARK: - Initializers
 
-    public init(tag: WSTag) {
+    public required init(tag: WSTag) {
         super.init(frame: CGRect.zero)
         self.backgroundColor = tintColor
         self.layer.cornerRadius = cornerRadius

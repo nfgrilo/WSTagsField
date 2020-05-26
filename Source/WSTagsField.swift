@@ -26,6 +26,9 @@ open class WSTagsField: UIScrollView {
 
     /// Dedicated text field delegate.
     open weak var textDelegate: UITextFieldDelegate?
+    
+    /// Class to be used as a tag view.
+    open var tagViewClass: WSTagView.Type { WSTagView.self }
 
     /// Background color for tag view in normal (non-selected) state.
     open override var tintColor: UIColor! {
@@ -377,7 +380,7 @@ open class WSTagsField: UIScrollView {
 
         self.tags.append(tag)
 
-        let tagView = WSTagView(tag: tag)
+        let tagView = tagViewClass.init(tag: tag)
         tagView.font = self.font
         tagView.tintColor = self.tintColor
         tagView.textColor = self.textColor
