@@ -133,12 +133,12 @@ open class WSTagView: UIView, UITextInputTraits {
 
     // MARK: - Styling
 
-    fileprivate func updateColors() {
+    open func updateColors() {
         self.backgroundColor = selected ? selectedColor : tintColor
         textLabel.textColor = selected ? selectedTextColor : textColor
     }
 
-    internal func updateContent(animated: Bool) {
+    open func updateContent(animated: Bool) {
         guard animated else {
             updateColors()
             return
