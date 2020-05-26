@@ -29,6 +29,9 @@ open class WSTagsField: UIScrollView {
     
     /// Class to be used as a tag view.
     open var tagViewClass: WSTagView.Type { WSTagView.self }
+    
+    /// Closure called after tag view creation, offereing a chance of customization upon creation.
+    open var configureTagView: ((WSTagView) -> Void)?
 
     /// Background color for tag view in normal (non-selected) state.
     open override var tintColor: UIColor! {
@@ -399,6 +402,8 @@ open class WSTagsField: UIScrollView {
         tagView.borderColor = self.borderColor
         tagView.keyboardAppearance = self.keyboardAppearance
         tagView.layoutMargins = self.layoutMargins
+
+        configureTagView?(tagView)
 
         tagView.onDidRequestSelection = { [weak self] tagView in
             self?.selectTagView(tagView, animated: true)
