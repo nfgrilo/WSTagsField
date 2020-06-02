@@ -10,7 +10,7 @@ import UIKit
 
 open class WSTagView: UIView, UITextInputTraits {
 
-    fileprivate let textLabel = UILabel()
+    public let textLabel = UILabel()
 
     open var displayText: String = "" {
         didSet {
@@ -102,7 +102,7 @@ open class WSTagView: UIView, UITextInputTraits {
 
     // MARK: - Initializers
 
-    public init(tag: WSTag) {
+    public required init(tag: WSTag) {
         super.init(frame: CGRect.zero)
         self.backgroundColor = tintColor
         self.layer.cornerRadius = cornerRadius
@@ -133,12 +133,12 @@ open class WSTagView: UIView, UITextInputTraits {
 
     // MARK: - Styling
 
-    fileprivate func updateColors() {
+    open func updateColors() {
         self.backgroundColor = selected ? selectedColor : tintColor
         textLabel.textColor = selected ? selectedTextColor : textColor
     }
 
-    internal func updateContent(animated: Bool) {
+    open func updateContent(animated: Bool) {
         guard animated else {
             updateColors()
             return
@@ -243,7 +243,7 @@ extension WSTagView: UIKeyInput {
         onDidInputText?(self, text)
     }
 
-    public func deleteBackward() {
+    open func deleteBackward() {
         onDidRequestDelete?(self, nil)
     }
 
