@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28D57BCF247D7D3200849800 /* CustomWSTagsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D57BCE247D7D3200849800 /* CustomWSTagsField.swift */; };
+		28D57BD2247D7D6300849800 /* CustomWSTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D57BD1247D7D6300849800 /* CustomWSTagView.swift */; };
 		D73307521EB3B8DE00FD29B4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73307511EB3B8DE00FD29B4 /* TableViewController.swift */; };
 		D7F33FF61D2A7378003F0082 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F33FF51D2A7378003F0082 /* AppDelegate.swift */; };
 		D7F33FF81D2A7378003F0082 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F33FF71D2A7378003F0082 /* ViewController.swift */; };
@@ -56,6 +58,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28D57BCE247D7D3200849800 /* CustomWSTagsField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWSTagsField.swift; sourceTree = "<group>"; };
+		28D57BD1247D7D6300849800 /* CustomWSTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWSTagView.swift; sourceTree = "<group>"; };
 		D73307511EB3B8DE00FD29B4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		D7F33FF21D2A7378003F0082 /* WSTagsFieldExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSTagsFieldExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7F33FF51D2A7378003F0082 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				D7F33FF51D2A7378003F0082 /* AppDelegate.swift */,
 				D7F33FF71D2A7378003F0082 /* ViewController.swift */,
 				D73307511EB3B8DE00FD29B4 /* TableViewController.swift */,
+				28D57BCE247D7D3200849800 /* CustomWSTagsField.swift */,
+				28D57BD1247D7D6300849800 /* CustomWSTagView.swift */,
 				D7F33FF91D2A7378003F0082 /* Main.storyboard */,
 				D7F33FFC1D2A7378003F0082 /* Assets.xcassets */,
 				D7F33FFE1D2A7378003F0082 /* LaunchScreen.storyboard */,
@@ -236,7 +242,9 @@
 			files = (
 				D7F33FF81D2A7378003F0082 /* ViewController.swift in Sources */,
 				D73307521EB3B8DE00FD29B4 /* TableViewController.swift in Sources */,
+				28D57BCF247D7D3200849800 /* CustomWSTagsField.swift in Sources */,
 				D7F33FF61D2A7378003F0082 /* AppDelegate.swift in Sources */,
+				28D57BD2247D7D6300849800 /* CustomWSTagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
