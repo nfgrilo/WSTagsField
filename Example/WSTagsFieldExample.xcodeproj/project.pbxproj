@@ -58,6 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28A3DE32248807EA00CFB154 /* WSTagsFieldExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WSTagsFieldExample.entitlements; sourceTree = "<group>"; };
 		28D57BCE247D7D3200849800 /* CustomWSTagsField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWSTagsField.swift; sourceTree = "<group>"; };
 		28D57BD1247D7D6300849800 /* CustomWSTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWSTagView.swift; sourceTree = "<group>"; };
 		D73307511EB3B8DE00FD29B4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 		D7F33FF41D2A7378003F0082 /* WSTagsFieldExample */ = {
 			isa = PBXGroup;
 			children = (
+				28A3DE32248807EA00CFB154 /* WSTagsFieldExample.entitlements */,
 				D7F33FF51D2A7378003F0082 /* AppDelegate.swift */,
 				D7F33FF71D2A7378003F0082 /* ViewController.swift */,
 				D73307511EB3B8DE00FD29B4 /* TableViewController.swift */,
@@ -391,6 +393,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WSTagsFieldExample/WSTagsFieldExample.entitlements;
 				INFOPLIST_FILE = WSTagsFieldExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.whitesmith.WSTagsFieldExample;
@@ -404,6 +407,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WSTagsFieldExample/WSTagsFieldExample.entitlements;
 				INFOPLIST_FILE = WSTagsFieldExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.whitesmith.WSTagsFieldExample;
