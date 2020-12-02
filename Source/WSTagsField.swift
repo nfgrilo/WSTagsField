@@ -189,6 +189,12 @@ open class WSTagsField: UIScrollView {
             repositionViews()
         }
     }
+    
+    open var forceTextFieldOnNewLine: Bool = false {
+        didSet {
+            repositionViews()
+        }
+    }
 
     /// By default, the return key is used to create a tag in the field. You can change it, i.e., to use comma or space key instead.
     open var acceptTagOption: WSTagAcceptOption = .return
@@ -722,7 +728,7 @@ extension WSTagsField {
             var textFieldRect = CGRect.zero
             textFieldRect.size.height = Constants.STANDARD_ROW_HEIGHT
 
-            if availableWidthForTextField < Constants.MINIMUM_TEXTFIELD_WIDTH {
+            if forceTextFieldOnNewLine || availableWidthForTextField < Constants.MINIMUM_TEXTFIELD_WIDTH {
                 // If in the future we add more UI elements below the tags,
                 // isOnFirstLine will be useful, and this calculation is important.
                 // So leaving it set here, and marking the warning to ignore it
