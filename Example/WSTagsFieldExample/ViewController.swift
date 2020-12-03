@@ -49,6 +49,7 @@ class ViewController: UIViewController {
             tagView.readonlyTextColor = .black
             tagView.tagColor = .init(red: 208/255, green: 230/255, blue: 255/255, alpha: 1)
         }
+        tagsField.forceTextFieldOnNewLine = true
         
         tagsField.font = .systemFont(ofSize: 12)
 
