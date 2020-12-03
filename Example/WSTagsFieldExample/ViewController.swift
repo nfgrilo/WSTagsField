@@ -11,7 +11,7 @@ import WSTagsField
 
 class ViewController: UIViewController {
 
-    fileprivate let tagsField = WSTagsField()
+    fileprivate let tagsField = CustomWSTagsField()
 
     @IBOutlet fileprivate weak var tagsView: UIView!
     @IBOutlet weak var anotherField: UITextField!
@@ -24,22 +24,34 @@ class ViewController: UIViewController {
         //tagsField.translatesAutoresizingMaskIntoConstraints = false
         //tagsField.heightAnchor.constraint(equalToConstant: 150).isActive = true
 
-        tagsField.cornerRadius = 3.0
-        tagsField.spaceBetweenLines = 10
-        tagsField.spaceBetweenTags = 10
-
-        //tagsField.numberOfLines = 3
-        //tagsField.maxHeight = 100.0
-
-        tagsField.layoutMargins = UIEdgeInsets(top: 2, left: 6, bottom: 2, right: 6)
-        tagsField.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10) //old padding
+        
+        tagsField.cornerRadius = 12
+        tagsField.spaceBetweenLines = 4
+        tagsField.spaceBetweenTags = 4
+        tagsField.layoutMargins = UIEdgeInsets(top: 3, left: 10, bottom: 3, right: 10)
+        tagsField.contentInset = UIEdgeInsets(top: 3, left: 0, bottom: 3, right: 0)
 
         tagsField.placeholder = "Enter a tag"
-        tagsField.placeholderColor = .red
+        tagsField.placeholderColor = .darkGray
         tagsField.placeholderAlwaysVisible = true
-        tagsField.backgroundColor = .lightGray
+        tagsField.backgroundColor = .white
         tagsField.textField.returnKeyType = .continue
         tagsField.delimiter = ""
+        
+        tagsField.tagColor = .init(red: 208/255, green: 230/255, blue: 255/255, alpha: 1)
+        tagsField.tintColor = .init(red: 208/255, green: 230/255, blue: 255/255, alpha: 1)
+        tagsField.textColor = .black
+        tagsField.selectedColor = .init(red: 176/255, green: 195/255, blue: 216/255, alpha: 1)
+        tagsField.selectedTextColor = .black
+        tagsField.configureTagView = { tagView in
+            guard let tagView = tagView as? CustomWSTagView else { return }
+            tagView.readonlyColor = .blue
+            tagView.readonlyTextColor = .black
+            tagView.tagColor = .init(red: 208/255, green: 230/255, blue: 255/255, alpha: 1)
+        }
+        tagsField.forceTextFieldOnNewLine = true
+        
+        tagsField.font = .systemFont(ofSize: 12)
 
         tagsField.textDelegate = self
 
@@ -49,6 +61,11 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tagsField.beginEditing()
+        
+        let tag1 = WSTag("Nuno Grilo", context: UUID().uuidString)
+        tagsField.addTag(tag1)
+        let tag2 = WSTag("Alan Roger", context: UUID().uuidString)
+        tagsField.addTag(tag2)
     }
 
     override func viewDidLayoutSubviews() {
@@ -62,11 +79,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func touchChangeAppearance(_ sender: UIButton) {
-        tagsField.layoutMargins = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
-        tagsField.contentInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2) //old padding
-        tagsField.cornerRadius = 10.0
-        tagsField.spaceBetweenLines = 2
-        tagsField.spaceBetweenTags = 2
+        tagsField.cornerRadius = 12
+        tagsField.spaceBetweenLines = 4
+        tagsField.spaceBetweenTags = 4
+        tagsField.layoutMargins = UIEdgeInsets(top: 3, left: 10, bottom: 3, right: 10)
+        tagsField.contentInset = UIEdgeInsets(top: 3, left: 0, bottom: 3, right: 0)
+        
         tagsField.tintColor = .red
         tagsField.textColor = .blue
         tagsField.selectedColor = .yellow
@@ -84,10 +102,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func touchAddRandomTags(_ sender: UIButton) {
-        tagsField.addTag(NSUUID().uuidString)
-        tagsField.addTag(NSUUID().uuidString)
-        tagsField.addTag(NSUUID().uuidString)
-        tagsField.addTag(NSUUID().uuidString)
+//        tagsField.addTag(NSUUID().uuidString)
+//        tagsField.addTag(NSUUID().uuidString)
+//        tagsField.addTag(NSUUID().uuidString)
+//        tagsField.addTag(NSUUID().uuidString)
+        let tag = WSTag("Nuno Grilo", context: UUID().uuidString)
+        tagsField.addTag(tag)
     }
 
     @IBAction func touchTableView(_ sender: UIButton) {
@@ -100,7 +120,8 @@ extension ViewController {
 
     fileprivate func textFieldEvents() {
         tagsField.onDidAddTag = { field, tag in
-            print("onDidAddTag", tag.text)
+            //print("onDidAddTag", tag.text)
+            print("onDidAddTag: \(tag.text) - context=\(tag.context)")
         }
 
         tagsField.onDidRemoveTag = { field, tag in
